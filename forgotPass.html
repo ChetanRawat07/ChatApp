@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sendResetPasswordMail(){
+const email=document.getElementById("email").value;
+const message=document.getElementById("message");
+const error=documenmt.getElementById("error")
+message.textContent=""
+if(!email)
+{
+    error.textContent="please enter your email";
+    return;
+    }
+    auth.sendResetPasswordMail(email)
+    .then(()=>{
+        message.textContent="Password Reset link sent"
+    })
+    .catch((err)=>{
+        error.textContent=err.message;
+    })
+        }
+    </script>
+</body>
+</html>

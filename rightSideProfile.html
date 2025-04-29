@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>right side</title>
+    <style>
+      .sidebar {
+        width: 320px;
+        /* height: 100vh; */
+        font-family: sans-serif;
+        /* padding: 10px; */
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .profile-selection {
+        text-align: center;
+        position: relative;
+        
+      }
+      .background-img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        /* border-radius: 10px; */
+      }
+      .user-avataar {
+        width: 60px;
+        height: 60px;
+        left: 50%;
+        bottom: 25%;
+        transform: translateX(-50%);
+        border: 2px solid white;
+        border-radius: 50%;
+        position: absolute;
+      }
+      .profile-selection h3 {
+        margin-top: 40px;
+        font-size: 18px;
+      }
+      .profile-selection p {
+        text-align: center;
+        font-size: 14px;
+        color: #888;
+      }
+      .action-button {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+      .action-button button {
+        flex: 1;
+        margin: 0 5px;
+        padding: 8px;
+        border: none;
+        border-radius: 10px;
+        background: #f0f0f0;
+        cursor: pointer;
+      }
+      .tabs {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 15px;
+        font-weight: bold;
+        border-bottom: 2px solid #ddd;
+      }
+      .tabs span {
+        padding: 10px;
+        cursor: pointer;
+      }
+      
+      
+      .tabs .active-tabs {
+        color: blue;
+        border-bottom: 2px solid blue;
+      }
+      .section {
+        margin-top: 20px;
+      }
+      .section h4 {
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+      .themes {
+        display: flex;
+        gap: 10px;
+        .theme {
+          border-radius: 50%;
+          background-size: 100% 100%;
+
+          width: 30px;
+          height: 30px;
+          border: 5px solid rgb(239, 236, 236);
+        }
+      }
+      .blue {
+        background: conic-gradient(#fff 50%, blue 50%);
+      }
+      .red {
+        background: conic-gradient(#fff 50%, red 50%);
+      }
+      .green {
+        background: conic-gradient(#fff 50%, green 50%);
+      }
+      .voilet {
+        background: conic-gradient(#fff 50%, blueviolet 50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="profile-selection">
+        <img src="dog.jpg" alt="background" class="background-img" />
+        <img src="konsta.jpg" alt="user" class="user-avataar" />
+        <h3>Konstantin Frank</h3>
+        <p>Active Now</p>
+      </div>
+      <!-- mute media option pane working here -->
+      <div class="action-button">
+        <button>Mute</button>
+        <button>Media</button>
+        <button>Options</button>
+      </div>
+      <!-- working with customixation and manage TABS -->
+      <div class="tabs">
+        <span class="active-tabs"> Customize</span>
+        <span>Manage</span>
+      </div>
+      <!-- Cust Selection Part -->
+      <div class="section">
+        <h4>CHANGE THEME</h4>
+        <div class="themes">
+          <div class="theme blue"></div>
+          <div class="theme red"></div>
+          <div class="theme green"></div>
+          <div class="theme voilet"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

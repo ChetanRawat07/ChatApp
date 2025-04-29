@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        /* height: 100vh; */
+        background: #f9f9f9;
+        width:100vw;
+      }
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px 10px 7px;
+        height: 52px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        border-bottom: 1px solid grey;
+      }
+      ul.nav-list {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .nav-iconMain {
+        height: 40px;
+        width: 40px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+        border-right: 1px solid grey;
+        padding: 1rem;
+      }
+      .nav-icon {
+        height: 40px;
+        width: 40px;
+        background-color:#dedee2;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+      }
+.nav-icon img{
+    height: 16px;
+    position: absolute;
+    left: 12px;
+      }
+      .nav-icon.nav-icon-active {
+        background-color: rgb(191,219,254);
+      }
+      .badge {
+        position: absolute;
+        font-weight: 600;
+        top: -5px;
+        right: -2px;
+        border-radius: 50%;
+        background-color: rgb(37,99,235);
+        color: white;
+        padding: 2px 5px;
+        font-size: 12px;
+      }
+      .avaatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+        cursor: pointer;
+      }
+      .avaatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .sections{
+        height: 100vh;
+        width: 100vw;
+      }
+    </style>
+  </head>
+  <body><div>
+    <div class="navbar">
+      <ul class="nav-list nav-left">
+        <li>
+          <div class="nav-iconMain">
+            <img src="imgMain.svg" alt="connect" />
+          </div>
+        </li>
+        <li>
+          <div class="nav-icon nav-icon-active">
+            <img src="/assets/icon1.svg" alt="icon1" />
+          </div>
+        </li>
+        <li>
+          <div class="nav-icon">
+            <img src="icon2.svg" alt="icon2" />
+          </div>
+        </li>
+        <li>
+          <div class="nav-icon">
+            <img src="icon3.svg" alt="icon3" />
+          </div>
+        </li>
+        <li>
+          <div class="nav-icon">
+            <img src="icon4.svg" alt="icon4" />
+            <div class="badge">2</div>
+          </div>
+        </li>
+        <li>
+          <div class="nav-icon">
+            <img src="icon5.svg" alt="icon5" />
+          </div>
+        </li>
+      </ul>
+      <ul class="nav-list nav-right">
+        <li>
+          <div class="nav-icon">
+            <img src="icon6.svg" alt="icon6" />
+          </div>
+        </li>
+        <li>
+          <div class="nav-icon">
+            <img src="icon7.svg" alt="icon7" />
+          </div>
+        </li>
+        <li>
+          <div class="avaatar">
+            <img
+              src="https://i.pravatar.cc/48?img=7"
+              alt="user"
+            />
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="sections">
+
+      <iframe src="sideBar.html" style=" border:none; width:297px; height:100vh;"></iframe>
+      <iframe src="" frameborder="0" width="45%"></iframe>
+      <iframe src="rightSideProfile.html" style="border:none; width:30%; height:100%; margin-top: -8px; "></iframe>
+    </div>
+  </div>
+  </body>
+</html>

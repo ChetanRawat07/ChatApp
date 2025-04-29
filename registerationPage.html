@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ConnectMe | Register</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background-color: #eaf2fe;
+      }
+
+      .container {
+        max-width: 500px;
+        margin: 50px auto;
+        margin-top: 70px;
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        padding-top: 5px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .logo {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .logo h2 {
+        font-size: 24px;
+        color: #333;
+      }
+
+      .form-group {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 15px;
+      }
+
+      .form-group input {
+        flex: 1;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+      }
+
+      .form-check {
+        margin-bottom: 20px;
+      }
+
+      .form-check input {
+        margin-right: 5px;
+      }
+
+      .form-check a {
+        color: #1976d2;
+        text-decoration: none;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 12px;
+        background-color: #1976d2;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-bottom: 20px;
+      }
+
+      .btn:hover {
+        background-color: #1565c0;
+      }
+
+      .social-login {
+        display: flex;
+        /* justify-content: space-evenly; */
+        gap: 10px;
+      }
+
+      .social-btn {
+        justify-content: center;
+        padding: 12px;
+        background-color: #f1f1f1;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: -35px;
+        color: grey;
+      }
+
+      .footer a {
+        color: #1976d2;
+        text-decoration: none;
+      }
+      .label1 {
+        display: flex;
+        gap: 180px;
+        margin-bottom: 10px;
+        color: rgb(68, 68, 68);
+        font-weight: 500;
+      }
+      .label2 {
+        display: flex;
+        gap: 195px;
+        margin-bottom: 10px;
+        color: rgb(68, 68, 68);
+        font-weight: 500;
+      }
+      .divider {
+        text-align: center;
+        margin: 20px 0;
+        color: gray;
+        font-size: 11.5px;
+        font-weight: 550;
+      }
+
+      .social-btns {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        width: 300px;
+        margin-left: 90px;
+      }
+
+      .social-btns button {
+        flex: 1;
+        padding: 10px;
+        margin: 0 5px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        background-color: #f0f2f5;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        font-weight: 500;
+        color: rgb(48, 48, 48);
+        background-color: rgb(223, 222, 222);
+      }
+
+      .social-btns img {
+        height: 18px;
+        margin-right: 8px;
+      }
+      #terms {
+        color: rgb(53, 52, 52);
+      }
+      hr {
+        color: rgb(209, 206, 206);
+      }
+      #pwerror {
+        color: red;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 15px;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h3 style="color: rgb(80, 79, 79)">Create Account</h3>
+
+      <div class="label1">
+        <label>Your Name</label>
+        <label>Email Address</label>
+      </div>
+      <div class="form-group">
+        <input type="text" id="name" placeholder="yourname" />
+        <input type="email" id="email" placeholder="youremail@example.com" />
+      </div>
+      <div class="label2">
+        <label>Password</label>
+        <label>Password Repeat</label>
+      </div>
+
+      <div class="form-group">
+        <input type="password" id="password" placeholder="password" />
+        <input
+          type="password"
+          id="confirmPassword"
+          placeholder="password again"
+        />
+      </div>
+      <span id="pwerror"></span>
+      <div class="form-check">
+        <input type="checkbox" id="terms" />
+        <label id="terms"
+          >I agree with <a href="#">privacy policy & terms</a></label
+        >
+      </div>
+
+      <button class="btn" onclick="register()">Account Register</button>
+      <hr />
+
+      <div class="divider">OR SIGNUP WITH</div>
+
+      <div class="social-btns">
+        <button id="googleLogin" onclick="googleLogin()">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/300/300221.png"
+            alt="Google"
+            width="16"
+          />Google
+        </button>
+        <button>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/124/124010.png"
+            alt="Facebook"
+            width="16"
+          />Facebook
+        </button>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>Already have an account? <a href="#">Login</a></p>
+    </div>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+      import {
+        getAuth,
+        GoogleAuthProvider,
+        signInWithPopup,
+      } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+      import {
+        getDatabase,
+        ref,
+        set,
+      } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-database.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDCW04y4hfYsP_v5-UNjNKLHxrXR5o8rNo",
+        authDomain: "chatfirst-cd9ed.firebaseapp.com",
+        databaseURL: "https://chatfirst-cd9ed-default-rtdb.firebaseio.com",
+        projectId: "chatfirst-cd9ed",
+        storageBucket: "chatfirst-cd9ed.firebasestorage.app",
+        messagingSenderId: "724218621966",
+        appId: "1:724218621966:web:100c26b24c80fd99f28c5f",
+        measurementId: "G-SFEQ9CQV6P",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth();
+      const provider = new GoogleAuthProvider();
+      const database = getDatabase(app);
+
+      // Email login
+      window.register = function () {
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const confirmPassword =
+          document.getElementById("confirmPassword").value;
+        const pwerror = document.getElementById("pwerror");
+        pwerror.textContent = "";
+
+        if (password !== confirmPassword) {
+          pwerror.textContent = "Enter same password";
+          return;
+        } else {
+          pwerror.textContent = "password matched";
+        }
+
+        const userId = Date.now();
+        set(ref(database, "users/" + userId), { email, password })
+          .then(() => {
+            alert("User saved successfully!");
+            document.getElementById("email").value = "";
+            document.getElementById("password").value = "";
+          })
+          .catch((error) => {
+            console.error("Error saving user:", error);
+            alert("Failed to save user.");
+          });
+      };
+
+      // Google login
+      window.googleLogin = function () {
+        document.getElementById("googleLogin");
+        signInWithPopup(auth, provider)
+          .then((result) => {
+            const user = result.user;
+            const userData = {
+              name: user.displayName,
+              email: user.email,
+              photo: user.photoURL,
+            };
+
+            // Store in localStorage
+            localStorage.setItem("googleUser", JSON.stringify(userData));
+
+            // Redirect to dashboard
+            window.location.href = "dashboard.html";
+          })
+          .catch((error) => {
+            console.error("Google login failed:", error);
+            alert("Google login failed.");
+          });
+      };
+    </script>
+  </body>
+</html>

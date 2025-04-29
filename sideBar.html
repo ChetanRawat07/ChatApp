@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      body {
+        margin: 0;
+        background-color: #f0f2f5;
+        font-family: "Roboto", sans-serif;
+      }
+      .sidebar {
+        width: 300px;
+        height: 320vh;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 2px 0 5px rgbs(0, 0, 0, 0.1);
+      }
+      .searchbox {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #e0e0e0;
+      }
+      .search-box input {
+        width: 100%;
+        padding: 8px 12px;
+        padding-left: 35px;
+        border: none;
+        background-color: #f5f5f5;
+        border-radius: 20px;
+        font-size: 14px;
+        outline: none;
+      }
+
+      .search-box i {
+        position: absolute;
+        margin-left: 15px;
+        color: #888;
+      }
+      .user-list {
+        overflow-y: auto;
+        flex: 1;
+      }
+      .user {
+        display: flex;
+        align-items: center;
+        padding: 12px 15px;
+        border-bottom: 1px solid #f0f0f0;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .user:hover {
+        background-color: #f9f9f9;
+      }
+      .user img {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        margin-right: 12px;
+      }
+      .user-info {
+        flex: 1;
+      }
+      .user-info h4 {
+        margin: 0;
+        font-size: 16px;
+        color: #333;
+      }
+      .user-info p {
+        margin: 4px 0 0;
+        font-size: 13px;
+        color: #777;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 200px;
+      }
+
+      .last-active {
+        font-size: 12px;
+        color: #999;
+        margin-left: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="searchbox">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <input type="text" />
+      </div>
+      <div class="user-list">
+        <div class="user">
+          <img src="https://i.pravatar.cc/48?img=1" alt="Image" />
+          <div class="user-info">
+            <h4>Jasmine Thompson</h4>
+            <p class="status-text">Working on a dummy project.</p>
+          </div>
+          <div class="last-active">45 minutes ago</div>
+        </div>
+
+        <div class="user">
+          <img src="https://i.pravatar.cc/48?img=2" alt="Image" />
+          <div class="user-info">
+            <h4>Konstantin Frank</h4>
+            <p class="status-text">Hello,there!</p>
+          </div>
+          <div class="last-active">5 minutes ago</div>
+        </div>
+
+        <div class="user">
+          <img src="https://i.pravatar.cc/48?img=3" alt="Image" />
+          <div class="user-info">
+            <h4>Mathias Davos</h4>
+            <p class="status-text">Hey,how's it going?</p>
+          </div>
+          <div class="last-active">15 minutes ago</div>
+        </div>
+
+        <div class="user">
+          <img src="https://i.pravatar.cc/48?img=4" alt="Image" />
+          <div class="user-info">
+            <h4>Marie George</h4>
+            <p class="status-text">Same here.I have been trying to keep up.</p>
+          </div>
+          <div class="last-active">35 minutes ago</div>
+        </div>
+
+        <div class="user">
+          <img src="https://i.pravatar.cc/48?img=5" alt="Image" />
+          <div class="user-info">
+            <h4>Philip Burke</h4>
+            <p class="status-text">It's been really fun up to.</p>
+          </div>
+          <div class="last-active">1 hour ago</div>
+        </div>
+
+        <div class="user">
+          <img src="https://i.pravatar.cc/48?img=6" alt="Image" />
+          <div class="user-info">
+            <h4>Romy Schulte</h4>
+            <p class="status-text">That's cool.</p>
+          </div>
+          <div class="last-active">1 day ago</div>
+        </div>
+
+        <div class="user">
+          <img src="https://i.pravatar.cc/48?img=7" alt="Image" />
+          <div class="user-info">
+            <h4>Frances Arnold</h4>
+            <p class="status-text">Yeah, I have been trying to..</p>
+          </div>
+          <div class="last-active">10 days ago</div>
+        </div>
+
+        <div class="user">
+          <img src="https://i.pravatar.cc/48?img=14" alt="Image" />
+          <div class="user-info">
+            <h4>Romy Schulte</h4>
+            <p class="status-text">That's cool.</p>
+          </div>
+          <div class="last-active">40 minutes ago</div>
+        </div>
+
+        <div class="user">
+          <img src="https://i.pravatar.cc/48?img=9" alt="Image" />
+          <div class="user-info">
+            <h4>Nina Dubois</h4>
+            <p class="status-text">That's awesome.</p>
+          </div>
+          <div class="last-active">20 minutes ago</div>
+        </div>
+
+        <div class="user">
+          <img src="https://i.pravatar.cc/48?img=10" alt="Image" />
+          <div class="user-info">
+            <h4>Romy Schulte</h4>
+            <p class="status-text">That's cool.</p>
+          </div>
+          <div class="last-active">3 days ago</div>
+        </div>
+
+        <div class="user">
+          <img src="https://i.pravatar.cc/48?img=11" alt="Image" />
+          <div class="user-info">
+            <h4>Albert Henderson</h4>
+            <p class="status-text">Sounds good to me.</p>
+          </div>
+          <div class="last-active">40 minutes ago</div>
+        </div>
+
+        <div class="user">
+          <img src="https://i.pravatar.cc/48?img=12" alt="Image" />
+          <div class="user-info">
+            <h4>Maxim Werner</h4>
+            <p class="status-text">Definitely,let;s plan to do it.</p>
+          </div>
+          <div class="last-active">1 day ago</div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
